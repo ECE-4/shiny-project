@@ -1,0 +1,25 @@
+{
+    "id": "F57BF446",
+    "path": "~/Documents/shiny-project/server.R",
+    "project_path": "server.R",
+    "type": "r_source",
+    "hash": "2635784020",
+    "contents": "",
+    "dirty": false,
+    "created": 1605623838304.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "3,2",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1605624159,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1605624159527,
+    "read_only": false,
+    "read_only_alternatives": []
+}
