@@ -1,0 +1,32 @@
+{
+    "id": "81888D82",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1605963250053.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "expression": "amsterdam1",
+        "caption": "amsterdam1",
+        "totalObservations": "18905",
+        "displayedObservations": "18905",
+        "variables": "16",
+        "cacheKey": "599DDC63",
+        "object": "amsterdam1",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=amsterdam1&cache_key=599DDC63&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3690471497971089968,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1605963250053,
+    "read_only": false,
+    "read_only_alternatives": []
+}

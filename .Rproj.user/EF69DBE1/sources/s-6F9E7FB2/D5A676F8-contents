@@ -32,9 +32,16 @@ shinyUI(fluidPage(
       submitButton("Submit")
     ),
     mainPanel(
-      h1("Main Panel Text"),
-      plotOutput("plot1"),
-      textOutput("text")
+      tabsetPanel( type = "tabs",
+                   tabPanel("Tab 1",
+                            h1("Main Panel Text"),
+                            plotOutput("plot1"),
+                            plotOutput('plot2')
+                            ),
+                   tabPanel("Tab 2",
+                            h1("Main Panel Text")
+                   )
+      )
     )
   )
 ))
