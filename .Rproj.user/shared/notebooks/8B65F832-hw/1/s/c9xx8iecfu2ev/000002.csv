@@ -1,0 +1,11 @@
+"0","```r
+avgRevenue <- aggregate(listings$revenue_30, by=list(Category=listings$city), FUN=mean)
+
+second <- ggplot(listings, aes(x=city, y=revenue_30)) + 
+    geom_boxplot() + ylim(0,5000) + stat_summary(fun=mean ,geom=\"point\",color=\"red\", aes(x=listings$city, y=listings$revenue_30))
+
+abline(h = mean(listings$revenue_30))
+```"
+"1","Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
+  plot.new has not been called yet
+"

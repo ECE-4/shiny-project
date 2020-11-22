@@ -1,0 +1,5 @@
+"0","```r
+ggplot(listings_malaga, aes(x=neighbourhood_cleansed)) + geom_histogram(stat = \"count\") 
+```"
+"1","Ignoring unknown parameters: binwidth, bins, pad
+"

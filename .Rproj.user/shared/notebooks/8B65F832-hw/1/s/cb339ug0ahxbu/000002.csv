@@ -1,0 +1,5 @@
+"0","```r
+third <- ggplot(listings, aes(x=availability_30, color=city)) + 
+    geom_histogram(fill=\"grey\", position=\"dodge\") 
+third
+```"

@@ -34,12 +34,14 @@ shinyUI(fluidPage(
     mainPanel(
       tabsetPanel( type = "tabs",
                    tabPanel("Tab 1",
-                            h1("Main Panel Text"),
-                            plotOutput("plot1"),
-                            plotOutput('plot2')
+                            h1("Compare different cities"),
+                            plotOutput(outputId = "plot3"),
+                            plotOutput(outputId = "plot4"),
+                            plotOutput(outputId = "plot1"),
+                            plotOutput(outputId = "plot2")
                             ),
                    tabPanel("Tab 2",
-                            h1("Main Panel Text")
+                            h1("Deep dive into one city"),
                    )
       )
     )

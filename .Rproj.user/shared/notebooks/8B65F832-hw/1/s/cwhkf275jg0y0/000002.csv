@@ -1,0 +1,15 @@
+"0","```r
+for(city in cities){
+    file_dir <- file.path(\".\", \"data_cleansed\", city)
+    file_subdirs <- list.dirs(file_dir)
+    file_subdirs <- file_subdirs[-1]
+    
+    for(file_subdir in file_subdirs){
+        if(file_subdir < file.path(file_dir, min_date) | file_subdir > file.path(file_dir, max_date)  )
+            file_subdirs = file_subdirs[file_subdirs != file_subdir]
+    }
+    files_paths <- c(files_paths, file_subdirs)
+}
+files_paths <- file.path(files_paths, \"listings.csv\")
+
+```"

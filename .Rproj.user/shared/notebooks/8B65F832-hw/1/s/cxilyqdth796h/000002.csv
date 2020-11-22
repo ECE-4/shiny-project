@@ -1,0 +1,4 @@
+"0","```r
+cities <- c(\"malaga\", \"mallorca\", \"sevilla\")
+files_paths <- c()
+```"

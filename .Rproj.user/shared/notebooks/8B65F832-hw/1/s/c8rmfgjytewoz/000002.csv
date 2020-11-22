@@ -1,0 +1,5 @@
+"0","```r
+snd <- ggplot(listings_malaga, aes(x=bedrooms, y=revenue_30)) + geom_bar(stat = \"identity\") 
+
+snd
+```"

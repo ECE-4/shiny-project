@@ -1,0 +1,5 @@
+"0","```r
+sixth <- ggplot(listings, aes(x = as.factor(room_type), y=revenue_30, fill=as.factor(city))) + 
+  geom_bar(position = position_dodge() ,stat=\"summary\") 
+sixth
+```"

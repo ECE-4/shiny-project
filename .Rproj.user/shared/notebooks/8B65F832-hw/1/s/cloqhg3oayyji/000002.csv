@@ -1,0 +1,9 @@
+"0","```r
+first <- ggplot(listings, aes(x=city, y=availability_30)) + 
+    geom_boxplot() + stat_summary(fun.y=mean ,geom=\"point\",color=\"red\", aes(x=city, y=availability_30))
+```"
+"1","`fun.y` is deprecated. Use `fun` instead.
+"
+"0","```r
+first
+```"

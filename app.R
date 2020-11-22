@@ -3,6 +3,9 @@ library(shiny)
 library(dplyr)
 library(data.table)
 library(stringr)
+library(ggplot2)
+
+setwd("~/Documents/shiny-project")
 
 # Function that import the data of a city
 prepare_data <- function(city ,date)

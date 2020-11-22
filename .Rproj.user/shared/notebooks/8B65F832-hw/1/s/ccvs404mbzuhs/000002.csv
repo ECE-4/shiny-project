@@ -1,0 +1,5 @@
+"0","```r
+eigth <- ggplot(listings, aes(x = as.factor(bedrooms))) + 
+    geom_bar(position = \"dodge\", aes(fill = as.factor(city)))
+eigth
+```"

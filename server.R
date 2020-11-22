@@ -11,7 +11,7 @@ shinyServer(function(input, output){
     dataY <- runif(number_of_points, minY, maxY)
     xlabel <- "X Axis"
     ylabel <- "Y Axis"
-    main <- "Title"
+    main <- "Average Availability"
     plot(dataX, dataY, xlab = xlabel, ylab = ylabel, main = main)
    })
   output$plot2 <- renderPlot({
@@ -24,7 +24,15 @@ shinyServer(function(input, output){
     dataY <- runif(number_of_points, minY, maxY)
     xlabel <- "X Axis"
     ylabel <- "Y Axis"
-    main <- "Title"
+    main <- "Average Revenue"
     plot(dataX, dataY, xlab = xlabel, ylab = ylabel, main = main)
+  })
+  output$plot3 <- renderPlot({
+    ggplot(amsterdam1, aes(x=city, y=availability_30)) + 
+      geom_boxplot() + stat_summary(fun=mean ,geom="point",color="red", aes(x=city, y=availability_30))
+  })
+  output$plot4 <- renderPlot({
+    ggplot(berlin1, aes(x=city, y=availability_30)) + 
+      geom_boxplot() + stat_summary(fun=mean ,geom="point",color="red", aes(x=city, y=availability_30))
   })
 })
