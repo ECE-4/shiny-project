@@ -1,5 +1,0 @@
-"0","```r
-first <- ggplot(listings_malaga, aes(x=room_type, y=revenue_30)) + geom_bar(stat = \"identity\") 
-
-first
-```"

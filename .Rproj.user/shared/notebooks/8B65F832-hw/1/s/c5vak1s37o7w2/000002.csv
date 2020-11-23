@@ -1,6 +1,0 @@
-"0","```r
-third <- ggplot(listings_malaga, aes(x=neighbourhood_cleansed, y=revenue_30, fill=as.factor(x = neighbourhood_cleansed) )) + 
-  geom_bar( stat=\"identity\") 
-
-third 
-```"

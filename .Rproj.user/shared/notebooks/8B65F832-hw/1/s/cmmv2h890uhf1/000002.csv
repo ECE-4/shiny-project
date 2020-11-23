@@ -1,7 +1,0 @@
-"0","```r
-malaga <- read.csv(file=\"data_cleansed/malaga/listings.csv\")
-mallorca <- read.csv(file=\"data_cleansed/mallorca/listings.csv\")
-sevilla <- read.csv(file=\"data_cleansed/sevilla/listings.csv\")
-
-listings <- rbind(malaga, mallorca, sevilla)
-```"

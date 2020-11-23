@@ -1,3 +1,0 @@
-"0","```r
-listings_malaga <- listings %>% filter(city == \"sevilla\")
-```"

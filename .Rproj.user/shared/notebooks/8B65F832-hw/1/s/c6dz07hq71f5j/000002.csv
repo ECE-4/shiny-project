@@ -1,5 +1,0 @@
-"0","```r
-fifth <- ggplot(listings, aes(x = as.factor(bedrooms), y=revenue_30, fill=as.factor(city))) + 
-    geom_bar(position = position_dodge() ,stat=\"summary\") 
-fifth
-```"
