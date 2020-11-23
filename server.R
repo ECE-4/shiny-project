@@ -1,4 +1,5 @@
 library(shiny)
+library(ggplot2)
 shinyServer(function(input, output){
   output$text <- renderText(input$slider1)
   output$plot1 <- renderPlot({
