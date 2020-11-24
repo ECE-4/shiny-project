@@ -37,11 +37,11 @@ prepare_data <- function(city ,date)
   
   ## Add Keys: columns city and day date
   listings$city <- city
-  listings$data_date <- date
+  listings$date <- date
   
   ## Select interesting columns
   ### Most columns don't contain interesting information
-  columns_listings <- c("city", "id", "neighbourhood_cleansed", 
+  columns_listings <- c("city", "id","date", "neighbourhood_cleansed", 
                         "latitude", "longitude", 
                         "property_type", "room_type", "accommodates", "bedrooms", 
                         "beds", "price", "minimum_nights",  "maximum_nights")
@@ -96,14 +96,14 @@ prepare_data <- function(city ,date)
 # Function that runs the entire app
 start_app <- function(){
   # France
-  bordeaux1 <<- prepare_data("bordeaux","2020-09-19")
-  bordeaux2 <<- prepare_data("bordeaux","2020-08-29")
-  bordeaux3 <<- prepare_data("bordeaux","2020-07-25")
+  bordeaux1 <- prepare_data("bordeaux","2020-09-19")
+  bordeaux2 <- prepare_data("bordeaux","2020-08-29")
+  bordeaux3 <- prepare_data("bordeaux","2020-07-25")
   
   # Netherlands
-  amsterdam1 <<- prepare_data("amsterdam", "2020-09-09")
-  amsterdam2 <<- prepare_data("amsterdam", "2020-08-18")
-  amsterdam3 <<- prepare_data("amsterdam", "2020-07-09")
+  amsterdam1 <- prepare_data("amsterdam", "2020-09-09")
+  amsterdam2 <- prepare_data("amsterdam", "2020-08-18")
+  amsterdam3 <- prepare_data("amsterdam", "2020-07-09")
   
   # Germany
   berlin1 <<- prepare_data("berlin", "2020-08-30")

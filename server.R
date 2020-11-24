@@ -1,38 +1,40 @@
 library(shiny)
 shinyServer(function(input, output){
   output$text <- renderText(input$slider1)
-  output$plot1 <- renderPlot({
-    number_of_points <- 1000
-    minX <- 0
-    maxX <- 100
-    minY <- 0
-    maxY <- 5000
-    dataX <- runif(number_of_points, minX, maxX)
-    dataY <- runif(number_of_points, minY, maxY)
-    xlabel <- "X Axis"
-    ylabel <- "Y Axis"
-    main <- "Average Availability"
-    plot(dataX, dataY, xlab = xlabel, ylab = ylabel, main = main)
-   })
-  output$plot2 <- renderPlot({
-    number_of_points <- 500
-    minX <- 0
-    maxX <- 100
-    minY <- 0
-    maxY <- 100
-    dataX <- runif(number_of_points, minX, maxX)
-    dataY <- runif(number_of_points, minY, maxY)
-    xlabel <- "X Axis"
-    ylabel <- "Y Axis"
-    main <- "Average Revenue"
-    plot(dataX, dataY, xlab = xlabel, ylab = ylabel, main = main)
+  output$plot5 <- renderPlot({
+    ggplot(amsterdam1, aes(availability_30)) +
+      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
+                     col="red",
+                     fill="red", 
+                     alpha=.2) + 
+      ylim(input$sliderY[1], input$sliderY[2]) + 
+      ggtitle("Amsterdam")
   })
-  output$plot3 <- renderPlot({
-    ggplot(amsterdam1, aes(x=city, y=availability_30)) + 
-      geom_boxplot() + stat_summary(fun=mean ,geom="point",color="red", aes(x=city, y=availability_30))
+  output$plot6 <- renderPlot({
+    ggplot(brussels1, aes(availability_30)) +
+      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1),
+                     col="green", 
+                     fill="green", 
+                     alpha=.2) + 
+      ylim(input$sliderY[1], input$sliderY[2]) + 
+      ggtitle("Brussels")
   })
-  output$plot4 <- renderPlot({
-    ggplot(berlin1, aes(x=city, y=availability_30)) + 
-      geom_boxplot() + stat_summary(fun=mean ,geom="point",color="red", aes(x=city, y=availability_30))
+  output$plot7 <- renderPlot({
+    ggplot(bordeaux1, aes(availability_30)) +
+      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
+                     col="purple", 
+                     fill="purple", 
+                     alpha=.2) + 
+      ylim(input$sliderY[1], input$sliderY[2]) + 
+      ggtitle("Bordeaux")
+  })
+  output$plot8 <- renderPlot({
+    ggplot(berlin2, aes(availability_30)) +
+      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
+                     col="yellow", 
+                     fill="yellow", 
+                     alpha=.2) + 
+      ylim(input$sliderY[1], input$sliderY[2]) + 
+      ggtitle("Berlin")
   })
 })
