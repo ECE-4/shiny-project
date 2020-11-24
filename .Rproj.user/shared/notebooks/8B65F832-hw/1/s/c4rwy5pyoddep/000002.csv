@@ -1,7 +1,0 @@
-"0","```r
-listing_bis <- listings %>% filter(revenue_30 > 0)
-
-fourth <- ggplot(listing_bis, aes(x=revenue_30, color=city)) + 
-    geom_histogram(fill=\"grey\", position=\"dodge\") + xlim(0,10000)
-fourth
-```"

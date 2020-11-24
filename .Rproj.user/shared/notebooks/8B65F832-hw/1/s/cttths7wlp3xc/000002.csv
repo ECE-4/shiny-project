@@ -1,5 +1,0 @@
-"0","```r
-seventh <- ggplot(listings, aes(x = as.factor(room_type))) + 
-    geom_bar(position = \"dodge\", aes(fill = as.factor(city)))
-seventh
-```"
