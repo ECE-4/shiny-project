@@ -34,6 +34,7 @@ shinyUI(fluidPage(
       #submitButton("Submit")
     ),
     mainPanel(
+      textOutput("text"),
       tabsetPanel( type = "tabs",
                    tabPanel("Tab 1",
                             h1("Compare different cities"),

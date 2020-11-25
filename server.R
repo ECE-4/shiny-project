@@ -2,17 +2,23 @@ library(shiny)
 library(ggplot2)
 shinyServer(function(input, output){
   ## Tab 1
-  output$text <- renderText(input$slider1)
-  output$plot5 <- renderPlot({
-    ggplot(amsterdam1, aes(availability_30)) +
-      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
-                     col="red",
-                     fill="red", 
-                     alpha=.2) + 
-      ylim(input$sliderY[1], input$sliderY[2]) + 
-      ggtitle("Amsterdam")
+  output$text <- renderPrint("2" %in% { input$city })
+  
+  output$plot5 <- renderPlot(
+    if ("5" %in% { input$city })
+    {
+      ggplot(amsterdam1, aes(availability_30)) +
+        geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
+                       col="red",
+                       fill="red", 
+                       alpha=.2) + 
+        ylim(input$sliderY[1], input$sliderY[2]) + 
+        ggtitle("Amsterdam")
   })
-  output$plot6 <- renderPlot({
+  
+  output$plot6 <- renderPlot(
+    if ("6" %in% { input$city })
+    {
     ggplot(brussels1, aes(availability_30)) +
       geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1),
                      col="green", 
@@ -21,7 +27,10 @@ shinyServer(function(input, output){
       ylim(input$sliderY[1], input$sliderY[2]) + 
       ggtitle("Brussels")
   })
-  output$plot7 <- renderPlot({
+  
+  output$plot7 <- renderPlot(
+    if ("1" %in% { input$city })
+    {
     ggplot(bordeaux1, aes(availability_30)) +
       geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
                      col="purple", 
@@ -30,7 +39,10 @@ shinyServer(function(input, output){
       ylim(input$sliderY[1], input$sliderY[2]) + 
       ggtitle("Bordeaux")
   })
-  output$plot8 <- renderPlot({
+  
+  output$plot8 <- renderPlot(
+    if ("4" %in% { input$city })
+    {
     ggplot(berlin2, aes(availability_30)) +
       geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
                      col="yellow", 

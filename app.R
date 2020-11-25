@@ -117,9 +117,9 @@ start_app <- function(){
   if (!exists("brussels3")) brussels3 <<- prepare_data("brussels","2020-04-19")
   
   # Spain 
-  if (!exists("malaga1")) malaga1 <<- prepare_data("malaga","2020-06-30")
-  if (!exists("malaga2")) malaga2 <<- prepare_data("malaga","2020-05-31")
-  if (!exists("malaga3")) malaga3 <<- prepare_data("malaga","2020-04-30")
+  #if (!exists("malaga1")) malaga1 <<- prepare_data("malaga","2020-06-30")
+  #if (!exists("malaga2")) malaga2 <<- prepare_data("malaga","2020-05-31")
+  #if (!exists("malaga3")) malaga3 <<- prepare_data("malaga","2020-04-30")
 ## add Valencia
   
   # Italy
