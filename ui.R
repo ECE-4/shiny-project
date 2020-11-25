@@ -11,12 +11,11 @@ shinyUI(fluidPage(
         "Tab 1",
         sidebarLayout(
           sidebarPanel(
-            h3("Sidebar Text"),
-            em("Emphasized Text"),
+            h3("Settings"),
             sliderInput("sliderX", "Slide the X axis", 0, 30, value = c(0, 30)),
             sliderInput("sliderY", "Slide the Y axis", 0, 20000, value = c(0, 20000)),
             checkboxGroupInput("city",
-              h3("Choose Cities you want to compare"),
+              h3("Choose Countries you want to compare"),
               choices = list(
                 "France" = 1,
                 "Spain" = 2,
@@ -79,10 +78,29 @@ shinyUI(fluidPage(
       ),
       tabPanel(
         "Tab 2",
-        h1("Deep dive into one city"),
-        leafletOutput("mymap"),
-        p(),
-        actionButton("recalc", "New points")
+        sidebarLayout(
+          sidebarPanel(
+            h3("Settings"),
+            selectInput("city",
+              h3("Choose Country you want to show"),
+              choices = list(
+                "France" = 1,
+                "Spain" = 2,
+                "Italy" = 3,
+                "Germany" = 4,
+                "Netherlands" = 5,
+                "Belgium" = 6
+              ),
+              selected = 1
+            )
+          ),
+          mainPanel(
+            h1("Deep dive into one city"),
+            leafletOutput("mymap"),
+            p(),
+            actionButton("recalc", "New points")
+          )
+        )
       )
     )
   )
