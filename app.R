@@ -108,21 +108,38 @@ start_app <- function() {
   if (!exists("bordeaux1")) bordeaux1 <<- prepare_data("bordeaux", "2020-09-19")
   if (!exists("bordeaux2")) bordeaux2 <<- prepare_data("bordeaux", "2020-08-29")
   if (!exists("bordeaux3")) bordeaux3 <<- prepare_data("bordeaux", "2020-07-25")
-
+  
+  France <- rbind(select(bordeaux1, longitude, latitude),
+                  select(bordeaux2, longitude, latitude),
+                  select(bordeaux3, longitude, latitude))
+  
   # Netherlands
   if (!exists("amsterdam1")) amsterdam1 <<- prepare_data("amsterdam", "2020-09-09")
   if (!exists("amsterdam2")) amsterdam2 <<- prepare_data("amsterdam", "2020-08-18")
   if (!exists("amsterdam3")) amsterdam3 <<- prepare_data("amsterdam", "2020-07-09")
+  
+  Netherlands <- rbind(select(amsterdam1, longitude, latitude),
+                       select(amsterdam2, longitude, latitude),
+                       select(amsterdam3, longitude, latitude))
 
+  
   # Germany
   if (!exists("berlin1")) berlin1 <<- prepare_data("berlin", "2020-08-30")
   if (!exists("berlin2")) berlin2 <<- prepare_data("berlin", "2020-06-13")
   if (!exists("berlin3")) berlin3 <<- prepare_data("berlin", "2020-05-14")
+  
+  Germany <- rbind(select(berlin1, longitude, latitude),
+                   select(berlin2, longitude, latitude),
+                   select(berlin3, longitude, latitude))
 
   # Belgium
   if (!exists("brussels1")) brussels1 <<- prepare_data("brussels", "2020-06-15")
   if (!exists("brussels2")) brussels2 <<- prepare_data("brussels", "2020-05-17")
   if (!exists("brussels3")) brussels3 <<- prepare_data("brussels", "2020-04-19")
+  
+  Belgium <- rbind(select(brussels1, longitude, latitude),
+                   select(brussels2, longitude, latitude),
+                   select(brussels2, longitude, latitude))
 
   # Spain
   # if (!exists("malaga1")) malaga1 <<- prepare_data("malaga","2020-06-30")

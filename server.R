@@ -62,19 +62,18 @@ shinyServer(function(input, output) {
 
   ## Tab 2
   output$text <- renderPrint({
-    input$city
+    input$cityMap
   })
-  
-  #juste pour les tests
-  points <- eventReactive(input$recalc, {
-    cbind(rnorm(40) * 2 + 13, rnorm(40) + 48)
-  }, ignoreNULL = FALSE)
-  
+
   output$mymap <- renderLeaflet({
     leaflet() %>%
       addProviderTiles(providers$Stamen.TonerLite,
-                       options = providerTileOptions(noWrap = TRUE)
+        options = providerTileOptions(noWrap = TRUE)
       ) %>%
-      addMarkers(data = points())
+      addMarkers(
+        clusterOptions = markerClusterOptions(),
+        lng = get(input$cityMap)$longitude, 
+        lat = get(input$cityMap)$latitude
+      )
   })
 })

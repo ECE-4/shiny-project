@@ -81,15 +81,15 @@ shinyUI(fluidPage(
         sidebarLayout(
           sidebarPanel(
             h3("Settings"),
-            selectInput("city",
+            selectInput("cityMap",
               h3("Choose Country you want to show"),
               choices = list(
-                "France" = 1,
-                "Spain" = 2,
-                "Italy" = 3,
-                "Germany" = 4,
-                "Netherlands" = 5,
-                "Belgium" = 6
+                "France" = "France",
+                "Spain" = "Spain",
+                "Italy" = "Italy",
+                "Germany" = "Germany",
+                "Netherlands" = "Netherlands",
+                "Belgium" = "Belgium"
               ),
               selected = 1
             )
