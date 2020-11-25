@@ -4,6 +4,7 @@ library(dplyr)
 library(data.table)
 library(stringr)
 library(ggplot2)
+library(googleVis)
 
 setwd("~/Documents/shiny-project")
 
@@ -29,6 +30,24 @@ prepare_data <- function(city ,date)
   } else if (city == "malaga"){
     listing_url <- paste0("http://data.insideairbnb.com/spain/andaluc%C3%ADa/malaga/",date,"/data/listings.csv.gz")
     calendar_url <- paste0("http://data.insideairbnb.com/spain/andaluc%C3%ADa/malaga/",date,"/data/calendar.csv.gz")
+  } else if (city == "ghent"){
+    listing_url <- paste0("http://data.insideairbnb.com/belgium/vlg/ghent/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/belgium/vlg/ghent/",date,"/data/calendar.csv.gz")
+  } else if (city == "antwerp"){
+    listing_url <- paste0("http://data.insideairbnb.com/belgium/vlg/antwerp/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/belgium/vlg/antwerp/",date,"/data/calendar.csv.gz")
+  } else if (city == "valencia" ){
+    lisitng_url <- paste0("http://data.insideairbnb.com/spain/vc/valencia/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/spain/vc/valencia/",date,"/data/calendar.csv.gz")
+  } else if (city == "girona"){
+    listing_url <- paste0("http://data.insideairbnb.com/spain/catalonia/girona/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/spain/catalonia/girona/",date,"/data/calendar.csv.gz")
+  } else if (city == "venice"){
+    listing_url <- paste0("http://data.insideairbnb.com/italy/veneto/venice/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/italy/veneto/venice/",date,"/data/calendar.csv.gz")
+  } else if (city == "florence"){
+    listing_url <- paste0("http://data.insideairbnb.com/italy/toscana/florence/",date,"/data/listings.csv.gz")
+    calendar_url <- paste0("http://data.insideairbnb.com/italy/toscana/florence/",date,"/data/calendar.csv.gz")
   }
   
   # Read the data 
@@ -106,7 +125,7 @@ start_app <- function(){
   amsterdam3 <<- prepare_data("amsterdam", "2020-07-09")
   
   # Germany
-  berlin1 <<- pprerepare_data("berlin", "2020-08-30")
+  berlin1 <<- prepare_data("berlin", "2020-08-30")
   berlin2 <<- prepare_data("berlin", "2020-06-13")
   berlin3 <<- prepare_data("berlin", "2020-05-14")
   
@@ -114,15 +133,25 @@ start_app <- function(){
   brussels1 <<- prepare_data("brussels","2020-06-15")
   brussels2 <<- prepare_data("brussels","2020-05-17")
   brussels3 <<- prepare_data("brussels","2020-04-19")
+## add Ghent
+  #ghent1 <<- prepare_data("ghent","2020-07-28")
+  
+## add Antwerp
+  antwerp1 <<- prepare_data("antwerp", "2020-06-22")
   
   # Spain 
   malaga1 <<- prepare_data("malaga","2020-06-30")
   malaga2 <<- prepare_data("malaga","2020-05-31")
   malaga3 <<- prepare_data("malaga","2020-04-30")
 ## add Valencia
+  valencia1 <<- prepare_data("valencia", "2020-08-30")
+## add Girona
+  girona1 <<- prepare_data("girona", "2020-05-28")
   
   # Italy
 ## add Venice
+  venice1 <<- prepare_data("venice", "2020-09-08")
 ## add Florence
+  florence1 <<- prepare_data("florence", "2020-08-31")
   
 }

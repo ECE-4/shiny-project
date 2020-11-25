@@ -40,4 +40,13 @@ shinyServer(function(input, output){
       ggtitle("Berlin")
   })
   ## Tab 2
+  output$plot10 <- renderPlot({
+    ggplot(berlin2, aes(revenue_30)) +
+      geom_histogram(breaks=seq(min(input$sliderX[1]), max(input$sliderX[2]), by=1), 
+                     col="yellow",
+                     fill="yellow", 
+                     alpha=.2) + 
+      ylim(input$sliderY[1], input$sliderY[2]) + 
+      ggtitle("Berlin")
+  })
 })
