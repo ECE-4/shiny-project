@@ -31,18 +31,18 @@ shinyUI(fluidPage(
         ),
         selected = 1
       ),
-      checkboxGroupInput("features",
+      selectInput("features",
         h3("Select the features"),
         choices = list(
-          "Availability over last 30 days" = 1,
-          "Revenu" = 2,
-          "Price" = 3
+          "Availability over last 30 days" = "availability_30",
+          "Revenu" = "revenue_30",
+          "Price" = "price_30"
         ),
         selected = 1
-      ),
-      # submitButton("Submit")
+      )
     ),
     mainPanel(
+      textOutput("text"),
       tabsetPanel(
         type = "tabs",
         tabPanel(
@@ -69,7 +69,7 @@ shinyUI(fluidPage(
             plotOutput(outputId = "plotNetherlands")
           ),
           conditionalPanel(
-            "input.city.indexOf('5') > -1",
+            "input.city.indexOf('6') > -1",
             plotOutput(outputId = "plotBelgium")
           )
         ),

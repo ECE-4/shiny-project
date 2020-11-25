@@ -2,12 +2,13 @@ library(shiny)
 library(ggplot2)
 shinyServer(function(input, output) {
   ## Tab 1
-
+  output$text <- renderPrint({ input$features })
+    
   output$plotFrance <- renderPlot(
     if ("1" %in% {
       input$city
     }) {
-      ggplot(bordeaux1, aes(availability_30)) +
+      ggplot(bordeaux1, aes_string(input$features)) +
         geom_histogram(
           breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
           col = "purple",
@@ -39,7 +40,7 @@ shinyServer(function(input, output) {
     if ("4" %in% {
       input$city
     }) {
-      ggplot(berlin2, aes(availability_30)) +
+      ggplot(berlin2, aes_string(input$features)) +
         geom_histogram(
           breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
           col = "yellow",
@@ -55,7 +56,7 @@ shinyServer(function(input, output) {
     if ("5" %in% {
       input$city
     }) {
-      ggplot(amsterdam1, aes(availability_30)) +
+      ggplot(amsterdam1, aes_string(input$features)) +
         geom_histogram(
           breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
           col = "red",
@@ -71,7 +72,7 @@ shinyServer(function(input, output) {
     if ("6" %in% {
       input$city
     }) {
-      ggplot(brussels1, aes(availability_30)) +
+      ggplot(brussels1, aes_string(input$features)) +
         geom_histogram(
           breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
           col = "green",
@@ -82,5 +83,7 @@ shinyServer(function(input, output) {
         ggtitle("Brussels")
     }
   )
+  
+  
   ## Tab 2
 })
