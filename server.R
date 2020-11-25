@@ -2,9 +2,6 @@ library(shiny)
 library(ggplot2)
 shinyServer(function(input, output) {
   ## Tab 1
-  output$text <- renderPrint({
-    input$features
-  })
 
   output$plotFrance <- renderPlot({
     ggplot(bordeaux1, aes_string(input$features)) +
@@ -64,4 +61,20 @@ shinyServer(function(input, output) {
 
 
   ## Tab 2
+  output$text <- renderPrint({
+    input$city
+  })
+  
+  #juste pour les tests
+  points <- eventReactive(input$recalc, {
+    cbind(rnorm(40) * 2 + 13, rnorm(40) + 48)
+  }, ignoreNULL = FALSE)
+  
+  output$mymap <- renderLeaflet({
+    leaflet() %>%
+      addProviderTiles(providers$Stamen.TonerLite,
+                       options = providerTileOptions(noWrap = TRUE)
+      ) %>%
+      addMarkers(data = points())
+  })
 })

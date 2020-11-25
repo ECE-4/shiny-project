@@ -1,4 +1,5 @@
 library(shiny)
+library(leaflet)
 library(ggplot2)
 shinyUI(fluidPage(
   titlePanel("Airbnb Data Explorator"),
@@ -42,7 +43,6 @@ shinyUI(fluidPage(
       )
     ),
     mainPanel(
-      textOutput("text"),
       tabsetPanel(
         type = "tabs",
         tabPanel(
@@ -76,8 +76,10 @@ shinyUI(fluidPage(
         tabPanel(
           "Tab 2",
           h1("Deep dive into one city"),
-          plotOutput(outputId = "plot10"),
-          plotOutput(outputId = "plot11")
+          textOutput("text"),
+          leafletOutput("mymap"),
+          p(),
+          actionButton("recalc", "New points")
         )
       )
     )
