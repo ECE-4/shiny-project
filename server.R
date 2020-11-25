@@ -1,6 +1,7 @@
 library(shiny)
 library(ggplot2)
 shinyServer(function(input, output){
+  ## Tab 1
   output$text <- renderText(input$slider1)
   output$plot5 <- renderPlot({
     ggplot(amsterdam1, aes(availability_30)) +
@@ -38,4 +39,5 @@ shinyServer(function(input, output){
       ylim(input$sliderY[1], input$sliderY[2]) + 
       ggtitle("Berlin")
   })
+  ## Tab 2
 })

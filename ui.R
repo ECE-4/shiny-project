@@ -44,6 +44,8 @@ shinyUI(fluidPage(
                             ),
                    tabPanel("Tab 2",
                             h1("Deep dive into one city"),
+                            plotOutput(outputId = "plot10"),
+                            plotOutput(outputId = "plot11")
                    )
       )
     )
