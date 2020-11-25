@@ -7,7 +7,7 @@ library(ggplot2)
 library(googleVis)
 
 #setwd("D://ECE//ing5//Data Analytics shiny project") # Neil
-setwd("~/Documents/shiny-project") #Sebastien
+#setwd("~/Documents/shiny-project") #Sebastien
 
 # Function that import the data of a city
 prepare_data <- function(city, date) {
@@ -151,9 +151,9 @@ start_app <- function() {
                    select(berlin3, longitude, latitude))
 
 # Belgium
-  if (!exists("brussels1")) brussels1 <<- prepare_data("brussels", "2020-06-15")
-  if (!exists("brussels2")) brussels2 <<- prepare_data("brussels", "2020-05-17")
-  if (!exists("brussels3")) brussels3 <<- prepare_data("brussels", "2020-04-19")
+  #if (!exists("brussels1")) brussels1 <<- prepare_data("brussels", "2020-06-15")
+  #if (!exists("brussels2")) brussels2 <<- prepare_data("brussels", "2020-05-17")
+  #if (!exists("brussels3")) brussels3 <<- prepare_data("brussels", "2020-04-19")
   
   ## add Ghent
   #if(!exists("ghent1")) ghent1 <<- prepare_data("ghent","2020-07-28")
@@ -161,9 +161,9 @@ start_app <- function() {
   #if(!exists("ghent3")) ghent3 <<- prepare_data("ghent","2020-05-24")
   
   ## add Antwerp
-  if (!exists("antwerp1")) antwerp1 <<- prepare_data("antwerp", "2020-06-22")
-  if (!exists("antwerp2")) antwerp2 <<- prepare_data("antwerp", "2020-05-27")
-  if (!exists("antwerp3")) antwerp3 <<- prepare_data("antwerp", "2020-04-28")
+  #if (!exists("antwerp1")) antwerp1 <<- prepare_data("antwerp", "2020-06-22")
+  #if (!exists("antwerp2")) antwerp2 <<- prepare_data("antwerp", "2020-05-27")
+  #if (!exists("antwerp3")) antwerp3 <<- prepare_data("antwerp", "2020-04-28")
   
   #Belgium <<- rbind(select(brussels1, longitude, latitude),
   #                  select(brussels2, longitude, latitude),
@@ -178,38 +178,38 @@ start_app <- function() {
   # if (!exists("malaga3")) malaga3 <<- prepare_data("malaga","2020-04-30")
   
   ## add Valencia
-  if (!exists("valencia1")) valencia1 <<- prepare_data("valencia", "2020-08-30")
-  if (!exists("valencia2")) valencia2 <<- prepare_data("valencia", "2020-06-30")
-  if (!exists("valencia3")) valencia3 <<- prepare_data("valencia", "2020-05-31")
+  #if (!exists("valencia1")) valencia1 <<- prepare_data("valencia", "2020-08-30")
+  #if (!exists("valencia2")) valencia2 <<- prepare_data("valencia", "2020-06-30")
+  #if (!exists("valencia3")) valencia3 <<- prepare_data("valencia", "2020-05-31")
   
-  Spain <- rbind(select(valencia1, longitude, latitude),
-                  select(valencia2, longitude, latitude),
-                  select(valencia3, longitude, latitude))
+  #Spain <- rbind(select(valencia1, longitude, latitude),
+  #                select(valencia2, longitude, latitude),
+  #                select(valencia3, longitude, latitude))
 
 # Italy
   
   ## add Girona
-  if (!exists("girona1")) girona1 <<- prepare_data("girona", "2020-06-29")
-  if (!exists("girona2")) girona2 <<- prepare_data("girona", "2020-05-28")
-  if (!exists("girona3")) girona3 <<- prepare_data("girona", "2020-04-30")
+  #if (!exists("girona1")) girona1 <<- prepare_data("girona", "2020-06-29")
+  #if (!exists("girona2")) girona2 <<- prepare_data("girona", "2020-05-28")
+  #if (!exists("girona3")) girona3 <<- prepare_data("girona", "2020-04-30")
   
   ## add Venice
-  if (!exists("venice1")) venice1 <<- prepare_data("venice", "2020-09-08")
-  if (!exists("venice2")) venice2 <<- prepare_data("venice", "2020-08-21")
+  #if (!exists("venice1")) venice1 <<- prepare_data("venice", "2020-09-08")
+  #if (!exists("venice2")) venice2 <<- prepare_data("venice", "2020-08-21")
   #if (!exists("venice3")) venice3 <<- prepare_data("venice", "2020-07-17")
   
   ## add Florence
-  if (!exists("florence1")) florence1 <<- prepare_data("florence", "2020-08-31")
-  if (!exists("florence2")) florence2 <<- prepare_data("florence", "2020-07-23")
-  if (!exists("florence3")) florence3 <<- prepare_data("florence", "2020-06-19")
+  #if (!exists("florence1")) florence1 <<- prepare_data("florence", "2020-08-31")
+  #if (!exists("florence2")) florence2 <<- prepare_data("florence", "2020-07-23")
+  #if (!exists("florence3")) florence3 <<- prepare_data("florence", "2020-06-19")
   
-    Italy <- rbind(select(girona1, longitude, latitude),
-                   select(girona2, longitude, latitude),
-                   select(girona3, longitude, latitude),
-                   select(venice1, longitude, latitude),
-                   select(venice2, longitude, latitude),
+  #  Italy <- rbind(select(girona1, longitude, latitude),
+  #                 select(girona2, longitude, latitude),
+                   #select(girona3, longitude, latitude),
+  #                 select(venice1, longitude, latitude),
+  #                 select(venice2, longitude, latitude),
                    #select(venice3, longitude, latitude),
-                   select(florence1, longitude, latitude),
-                   select(florence2, longitude, latitude),
-                   select(florence3, longitude, latitude),)
+  #                select(florence1, longitude, latitude),
+                   #select(florence2, longitude, latitude),
+  #                 select(florence3, longitude, latitude),)
 }

@@ -1,0 +1,10 @@
+name: shiny-project
+title:
+username:
+account: airbnb-explorator
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3303061
+bundleId: 3906716
+url: https://airbnb-explorator.shinyapps.io/shiny-project/
+when: 1606344760.86878
