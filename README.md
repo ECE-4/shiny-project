@@ -15,4 +15,4 @@ Made by the team composed of:
 
 4. In the console, run the following commande : `runApp()`
 
-5. Your app should be running locally !
+5. Your app should be running locally ! :)
