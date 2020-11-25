@@ -48,12 +48,30 @@ shinyUI(fluidPage(
         tabPanel(
           "Tab 1",
           h1("Compare different cities"),
-          plotOutput(outputId = "plotFrance"),
-          plotOutput(outputId = "plotSpain"),
-          plotOutput(outputId = "plotItaly"),
-          plotOutput(outputId = "plotGermany"),
-          plotOutput(outputId = "plotNetherlands"),
-          plotOutput(outputId = "plotBelgium")
+          conditionalPanel(
+            "input.city.indexOf('1') > -1",
+            plotOutput(outputId = "plotFrance")
+          ),
+          conditionalPanel(
+            "input.city.indexOf('2') > -1",
+            plotOutput(outputId = "plotSpain")
+          ),
+          conditionalPanel(
+            "input.city.indexOf('3') > -1",
+            plotOutput(outputId = "plotItaly")
+          ),
+          conditionalPanel(
+            "input.city.indexOf('4') > -1",
+            plotOutput(outputId = "plotGermany")
+          ),
+          conditionalPanel(
+            "input.city.indexOf('5') > -1",
+            plotOutput(outputId = "plotNetherlands")
+          ),
+          conditionalPanel(
+            "input.city.indexOf('5') > -1",
+            plotOutput(outputId = "plotBelgium")
+          )
         ),
         tabPanel(
           "Tab 2",
