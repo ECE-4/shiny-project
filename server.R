@@ -61,9 +61,7 @@ shinyServer(function(input, output) {
 
 
   ## Tab 2
-  output$text <- renderPrint({
-    input$cityMap
-  })
+  #output$text <- renderPrint({ input$cityMap })
 
   output$mymap <- renderLeaflet({
     leaflet() %>%
