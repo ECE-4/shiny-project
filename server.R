@@ -260,65 +260,115 @@ shinyServer(function(input, output) {
     }
   )
 
-  output$plotSpain <- renderPlot({
-    ggplot(bordeaux1, aes_string(input$features)) +
-      geom_histogram(
-        breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
-        col = "red",
-        fill = "red",
-        alpha = .2
-      ) +
-      ylim(input$sliderY[1], input$sliderY[2]) +
-      ggtitle("Spain")
-  })
+  output$plotSpain <- renderPlot(
+    if ("geom_histogram" %in% {
+      input$aggregation
+    }) {
+      ggplot(valencia1, aes_string(input$features)) +
+        geom_histogram(
+          breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
+          col = "red",
+          fill = "red",
+          alpha = .2
+        ) +
+        ylim(input$sliderY[1], input$sliderY[2]) +
+        ggtitle("Spain")
+    } else if ("geom_boxplot" %in% {
+      input$aggregation
+    }) {
+      ggplot(valencia1, aes_string(input$features)) +
+        geom_boxplot() +
+        ggtitle("Spain")
+    }
+  )
 
-  output$plotItaly <- renderPlot({
-    ggplot(bordeaux1, aes_string(input$features)) +
-      geom_histogram(
-        breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
-        col = "green",
-        fill = "green",
-        alpha = .2
-      ) +
-      ylim(input$sliderY[1], input$sliderY[2]) +
-      ggtitle("Italy")
-  })
+  output$plotItaly <- renderPlot(
+    if ("geom_histogram" %in% {
+      input$aggregation
+    }) {
+      ggplot(venice1, aes_string(input$features)) +
+        geom_histogram(
+          breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
+          col = "green",
+          fill = "green",
+          alpha = .2
+        ) +
+        ylim(input$sliderY[1], input$sliderY[2]) +
+        ggtitle("Italy")
+    } else if ("geom_boxplot" %in% {
+      input$aggregation
+    }) {
+      ggplot(venice1, aes_string(input$features)) +
+        geom_boxplot() +
+        ggtitle("Italy")
+    }
+  )
 
-  output$plotGermany <- renderPlot({
-    ggplot(berlin2, aes_string(input$features)) +
-      geom_histogram(
-        breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
-        col = "yellow",
-        fill = "yellow",
-        alpha = .2
-      ) +
-      ylim(input$sliderY[1], input$sliderY[2]) +
-      ggtitle("Germany")
-  })
+  output$plotGermany <- renderPlot(
+    if ("geom_histogram" %in% {
+      input$aggregation
+    }) {
+      ggplot(berlin2, aes_string(input$features)) +
+        geom_histogram(
+          breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
+          col = "yellow",
+          fill = "yellow",
+          alpha = .2
+        ) +
+        ylim(input$sliderY[1], input$sliderY[2]) +
+        ggtitle("Germany")
+    } else if ("geom_boxplot" %in% {
+      input$aggregation
+    }) {
+      ggplot(berlin2, aes_string(input$features)) +
+        geom_boxplot() +
+        ggtitle("Germany")
+    }
+  )
 
-  output$plotNetherlands <- renderPlot({
-    ggplot(amsterdam1, aes_string(input$features)) +
-      geom_histogram(
-        breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
-        col = "orange",
-        fill = "orange",
-        alpha = .2
-      ) +
-      ylim(input$sliderY[1], input$sliderY[2]) +
-      ggtitle("Netherlands")
-  })
+  output$plotNetherlands <- renderPlot(
+    if ("geom_histogram" %in% {
+      input$aggregation
+    }) {
+      ggplot(amsterdam1, aes_string(input$features)) +
+        geom_histogram(
+          breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
+          col = "orange",
+          fill = "orange",
+          alpha = .2
+        ) +
+        ylim(input$sliderY[1], input$sliderY[2]) +
+        ggtitle("Netherlands")
+    } else if ("geom_boxplot" %in% {
+      input$aggregation
+    }) {
+      ggplot(amsterdam1, aes_string(input$features)) +
+        geom_boxplot() +
+        ggtitle("Netherlands")
+    }
+  )
 
-  output$plotBelgium <- renderPlot({
-    ggplot(brussels1, aes_string(input$features)) +
-      geom_histogram(
-        breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
-        col = "black",
-        fill = "black",
-        alpha = .2
-      ) +
-      ylim(input$sliderY[1], input$sliderY[2]) +
-      ggtitle("Belgium")
-  })
+  output$plotBelgium <- renderPlot(
+    if ("geom_histogram" %in% {
+      input$aggregation
+    }) {
+      ggplot(brussels1, aes_string(input$features)) +
+        geom_histogram(
+          breaks = seq(min(input$sliderX[1]), max(input$sliderX[2]), by = 1),
+          col = "black",
+          fill = "black",
+          alpha = .2
+        ) +
+        ylim(input$sliderY[1], input$sliderY[2]) +
+        ggtitle("Belgium")
+    } else if ("geom_boxplot" %in% {
+      input$aggregation
+    }) {
+      ggplot(brussels1, aes_string(input$features)) +
+        geom_boxplot() +
+        ggtitle("Belgium")
+    }
+  )
 
 
   ## Tab 2
