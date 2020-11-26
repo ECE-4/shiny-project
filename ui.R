@@ -7,7 +7,7 @@ shinyUI(fluidPage(
     tabsetPanel(
       type = "tabs",
       tabPanel(
-        "Tab 1",
+        "Graph",
         sidebarLayout(
           sidebarPanel(
             h3("Settings"),
@@ -29,10 +29,7 @@ shinyUI(fluidPage(
               h3("Select the aggregation"),
               choices = list(
                 "Histogram" = "geom_histogram",
-                "Boxplot" = "geom_boxplot",
-                "Average" = 3,
-                "Density" = 4,
-                "PieChart" = "geom_bar"
+                "Boxplot" = "geom_boxplot"
               ),
               selected = 1
             ),
@@ -76,7 +73,7 @@ shinyUI(fluidPage(
         )
       ),
       tabPanel(
-        "Tab 2",
+        "Map",
         sidebarLayout(
           sidebarPanel(
             h3("Settings"),
@@ -103,7 +100,7 @@ shinyUI(fluidPage(
         )
       ),
       tabPanel(
-        "Tab 3",
+        "Documentation",
         sidebarLayout(
           sidebarPanel(
             h4("Summary:"),
