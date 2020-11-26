@@ -28,11 +28,11 @@ shinyUI(fluidPage(
             selectInput("aggregation",
               h3("Select the aggregation"),
               choices = list(
-                "Histogram" = 1,
-                "Boxplot" = 2,
+                "Histogram" = "geom_histogram",
+                "Boxplot" = "geom_boxplot",
                 "Average" = 3,
                 "Density" = 4,
-                "Boxplot" = 5
+                "PieChart" = "geom_bar"
               ),
               selected = 1
             ),
