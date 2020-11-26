@@ -197,18 +197,18 @@ start_app <- function() {
   
   ## add Florence
   if (!exists("florence1")) florence1 <<- prepare_data("florence", "2020-08-31")
-  if (!exists("florence2")) florence2 <<- prepare_data("florence", "2020-07-23")
+  #if (!exists("florence2")) florence2 <<- prepare_data("florence", "2020-07-23")
   if (!exists("florence3")) florence3 <<- prepare_data("florence", "2020-06-19")
   
-  Italy <- rbind(select(girona1, longitude, latitude),
-                 select(girona2, longitude, latitude),
-                 select(girona3, longitude, latitude),
-                 select(venice1, longitude, latitude),
-                 select(venice2, longitude, latitude),
-                 #select(venice3, longitude, latitude),
-                 select(florence1, longitude, latitude),
-                 select(florence2, longitude, latitude),
-                 select(florence3, longitude, latitude),)
+  #Italy <- rbind(select(girona1, longitude, latitude),
+   #              select(girona2, longitude, latitude),
+    #             select(girona3, longitude, latitude),
+     #            select(venice1, longitude, latitude),
+      #           select(venice2, longitude, latitude),
+       #          #select(venice3, longitude, latitude),
+        #         select(florence1, longitude, latitude),
+          #     #select(florence2, longitude, latitude),
+          #       select(florence3, longitude, latitude),)
 }
 
 start_app()
