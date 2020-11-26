@@ -81,14 +81,17 @@ shinyUI(fluidPage(
           sidebarPanel(
             h3("Settings"),
             selectInput("cityMap",
-              h3("Choose Country you want to show"),
+              h3("Choose City you want to show"),
               choices = list(
-                "France" = "France",
-                "Spain" = "Spain",
-                "Italy" = "Italy",
-                "Germany" = "Germany",
-                "Netherlands" = "Netherlands",
-                "Belgium" = "Belgium"
+                "France - Bordeaux" = "bordauxCoord",
+                "Netherlands - Amsterdam" = "amsterdamCoord",
+                "Germany - Berlin" = "berlinCoord",
+                "Belgium - Brussels" = "brusselsCoord",
+                "Belgium - Antwerps" = "antwerpsCoord",
+                "Spain - Valencia" = "valenciaCoord",
+                "Spain - Girona" = "gironaCoord",
+                "Italy - Venice" = "veniceCoord",
+                "Italy - Florence" = "florenceCoord"
               ),
               selected = 1
             )
